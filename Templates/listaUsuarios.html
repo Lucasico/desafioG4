@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>listagem de usuarios</title>
+</head>
+<body class="bg-dark text-white">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+    <a class="navbar-brand" href="#"><img src="data:image/png;base64,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" class="figure-img img-fluid rounded"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+    </div>
+</nav>
+ <div class="container" style="margin-top: 5rem">
+  <table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Endereço</th>
+        <th scope="col">Senha</th>
+        <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for usuario in usuarios %}
+    <tr>
+      <th scope="row">{{ usuario._id }}</th>
+      <td>{{ usuario.nome }}</td>
+      <td>{{ usuario.email }}</td>
+      <td>{{ usuario.endereco }}</td>
+        <td>{{ usuario.senha }}</td>
+        <td>
+            <a href="/atualizarUsuario/{{usuario._id}}"><i class="fa fa-pencil" style="padding-right: 1rem"></i></a>
+            <a href="/excluirUsuario/{{usuario._id}}"><i class="fa fa-trash"style="padding-right: 1rem"></i></a>
+        </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+     <a class="btn btn-primary" href="{{url_for('cadastroUsuario')}}" role="button">Voltar para Cadastro</a>
+ </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</html>
